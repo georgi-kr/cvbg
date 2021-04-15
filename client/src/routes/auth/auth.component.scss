@@ -1,0 +1,8 @@
+.auth {
+    width: 300px;
+
+    .login-form, .register-form {
+        display: flex;
+        flex-direction: column;
+    }
+}
