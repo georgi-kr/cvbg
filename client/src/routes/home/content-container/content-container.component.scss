@@ -1,0 +1,7 @@
+@import '../../../styles/variables'; 
+
+.content-container {
+    width: 100%;
+    min-height: 100vh;
+    border-left: 1px solid $color-border;
+}
