@@ -1,2 +1,3 @@
 # cvbg
-Resume builder
+Resume builder.
+Application that builds an interactive resume.
