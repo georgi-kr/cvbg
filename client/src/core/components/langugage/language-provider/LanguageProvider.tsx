@@ -6,7 +6,7 @@ interface Props {
 	children: React.ReactNode | React.ReactNode[];
 }
 
-export const LanguageProvider = ({ children }: Props) => {
+export const LanguageProvider: React.FC<Props> = ({ children }) => {
 	const defaultLanguage = window.localStorage.getItem('rcml-lang');
 	const windowLanguage = window.navigator.language || 'en';
 	const [userLanguage, setUserLanguage] = useState(defaultLanguage || windowLanguage);

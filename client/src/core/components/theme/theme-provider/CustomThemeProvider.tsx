@@ -8,7 +8,7 @@ interface Props {
 	children: React.ReactNode | React.ReactNode[];
 }
 
-export const CustomThemeProvider = ({ children }: Props) => {
+export const CustomThemeProvider: React.FC<Props> = ({ children }) => {
 	const [theme, setTheme] = useState(lightTheme);
 	const provider = {
 		theme,

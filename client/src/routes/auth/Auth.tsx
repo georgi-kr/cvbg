@@ -1,13 +1,13 @@
 import React, { FC } from 'react';
-import './auth.component.scss';
+import './Auth.scss';
 import { Controller, useForm } from 'react-hook-form';
 import { Button, TextField } from '@material-ui/core';
 
-export const AuthComponent: FC = () => {
+export const Auth: FC = () => {
 	const {
 		control,
 		handleSubmit,
-		formState: { errors },
+		formState: { errors }
 	} = useForm();
 	const onSubmit = (data: Event) => {
 		console.log(errors);
@@ -32,8 +32,8 @@ export const AuthComponent: FC = () => {
 						required: true,
 						pattern: {
 							value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
-							message: 'invalid email address',
-						},
+							message: 'invalid email address'
+						}
 					}}
 				/>
 				<Controller
@@ -48,7 +48,7 @@ export const AuthComponent: FC = () => {
 					control={control}
 					defaultValue={''}
 					rules={{
-						required: true,
+						required: true
 					}}
 				/>
 				<Button variant={'contained'} color={'primary'} type={'submit'}>

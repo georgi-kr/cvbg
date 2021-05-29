@@ -1,12 +1,12 @@
-import React, { FC } from 'react';
-import './left-panel.component.scss';
+import React from 'react';
+import './LeftPanel.scss';
 
 import { Button } from '@material-ui/core';
 import { text } from '../../../core/helpers/text';
-import { LanguageSelector } from '../../../core/components/langugage/language-selector/language-selector.component';
-import { ThemeToggle } from '../../../core/components/theme/theme-toggle/theme-toggle.component';
+import { LanguageSelector } from '../../../core/components/langugage/language-selector/LanguageSelector';
+import { ThemeToggle } from '../../../core/components/theme/theme-toggle/ThemeToggle';
 
-export const LeftPanelComponent: FC = () => {
+export const LeftPanel = () => {
 	return (
 		<div className={'left-panel-container'}>
 			<div className={'settings-wrapper flex-between'}>

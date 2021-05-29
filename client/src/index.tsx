@@ -4,10 +4,10 @@ import { render } from 'react-dom';
 import { BrowserRouter as Router, Redirect, Route, Switch } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import store from './core/+store/store';
-import { AuthComponent } from './routes/auth/auth.component';
-import { HomeComponent } from './routes/home/home.component';
-import { LanguageProvider } from './core/components/langugage/language-provider/language.provider';
-import { CustomThemeProvider } from './core/components/theme/theme-provider/theme.provider';
+import { LanguageProvider } from './core/components/langugage/language-provider/LanguageProvider';
+import { CustomThemeProvider } from './core/components/theme/theme-provider/CustomThemeProvider';
+import { Auth } from './routes/auth/Auth';
+import { Home } from './routes/home/Home';
 
 // if (process.env.NODE_ENV === 'development') {
 //   (window as any)._ = _;
@@ -17,9 +17,9 @@ import { CustomThemeProvider } from './core/components/theme/theme-provider/them
 // }
 // require('dotenv').config();
 
-console.log(process.env)
+console.log(process.env);
 
-function MainComponent() {
+function Main() {
 	const isLogged = localStorage.token;
 
 	return (
@@ -33,13 +33,13 @@ function MainComponent() {
 									<React.Fragment>
 										<Switch>
 											<Route path="/auth" render={() => <Redirect to={`/`} />} />
-											<Route path="/" component={HomeComponent} />
+											<Route path="/" component={Home} />
 										</Switch>
 									</React.Fragment>
 								) : (
 									<React.Fragment>
 										<Route path="/" render={() => <Redirect to={`/auth`} />} />
-										<Route path={`/auth`} component={AuthComponent} />
+										<Route path={`/auth`} component={Auth} />
 									</React.Fragment>
 								)}
 							</div>
@@ -51,4 +51,4 @@ function MainComponent() {
 	);
 }
 
-render(<MainComponent />, document.getElementById('root'));
+render(<Main />, document.getElementById('root'));
