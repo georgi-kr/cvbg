@@ -1,8 +1,10 @@
 import { combineReducers } from 'redux';
-import { ResumeReducer } from './resumes/+resumes.reducer';
+import { ResumeReducer } from './resumes/+resume.reducer';
+import { NotificationReducer } from './notifications/+notification.reducer';
 
 export const rootReducer = combineReducers({
-	resumes: ResumeReducer
+	resumes: ResumeReducer,
+	notifications: NotificationReducer
 });
 
 export type AppState = ReturnType<typeof rootReducer>;

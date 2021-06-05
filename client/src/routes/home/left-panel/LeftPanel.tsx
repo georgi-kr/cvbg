@@ -3,7 +3,7 @@ import './LeftPanel.scss';
 import { useDispatch } from 'react-redux';
 import { Button } from '@material-ui/core';
 
-import { CreateResumeRequest } from '../../../core/+store/resumes/actions.types';
+import { CreateResumeAction } from '../../../core/+store/resumes/+actions.types';
 import { text } from '../../../core/helpers/text';
 import { LanguageSelector } from '../../../core/components/langugage/language-selector/LanguageSelector';
 import { ThemeToggle } from '../../../core/components/theme/theme-toggle/ThemeToggle';
@@ -11,7 +11,7 @@ import { ThemeToggle } from '../../../core/components/theme/theme-toggle/ThemeTo
 export const LeftPanel = () => {
 	const dispatch = useDispatch();
 
-	const createResume = () => dispatch(CreateResumeRequest({}));
+	const createResume = () => dispatch(CreateResumeAction({}));
 
 	return (
 		<div className={'left-panel-container'}>

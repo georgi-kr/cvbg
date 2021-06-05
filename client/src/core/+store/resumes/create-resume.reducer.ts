@@ -1,11 +1,13 @@
 import { put } from 'redux-saga/effects';
 import { Action } from '../../interfaces/action.type';
-import { CreateResumeFailureAction, CreateResumeSuccessAction } from './actions.types';
+import { SelectResumeAction } from './+actions.types';
+import { CreateNotificationAction } from '../notifications/+actions.types';
 
 export function* createResumeWorker(action: Action<any>) {
+	console.log(action);
 	try {
-		yield put(CreateResumeSuccessAction(action.payload));
+		yield put(SelectResumeAction(action.payload));
 	} catch (e) {
-		yield put(CreateResumeFailureAction(e.message));
+		yield put(CreateNotificationAction(e.message));
 	}
 }
