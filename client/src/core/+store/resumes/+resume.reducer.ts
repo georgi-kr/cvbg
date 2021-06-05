@@ -22,7 +22,7 @@ export const ResumeReducer = createReducer<ResumesState>(initialState, (builder)
 		.addCase(CreateResumeAction, (state, action) => {
 			return {
 				...state,
-				resumes: [...state.all, action.payload]
+				all: [...state.all, action.payload]
 			};
 		})
 		.addCase(SelectResumeAction, (state, action) => {
