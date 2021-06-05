@@ -6,13 +6,12 @@ import { darkTheme, lightTheme } from '../theme';
 
 export const ThemeToggle = () => {
 	const { theme, setTheme } = useContext(ThemeContext);
-	const isLight = theme === lightTheme;
 
 	const toggleTheme = () => {
-		if (isLight) {
-			setTheme(darkTheme);
-		} else {
+		if (theme.palette.type === 'dark') {
 			setTheme(lightTheme);
+		} else {
+			setTheme(darkTheme);
 		}
 	};
 

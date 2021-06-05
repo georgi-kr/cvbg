@@ -1,15 +1,19 @@
-const initialState: any[] = [];
-// const ACTION_HANDLERS = [
-//     getResumesReducer,
-//     createResumeReducer
-// ].reduce((acc, reducer) => ({ ...acc, [reducer.type]: reducer.handler }), {});
+import { createReducer } from '@reduxjs/toolkit';
+import { CreateResumeSuccessAction } from './actions.types';
 
-export function resumesReducer(state = initialState, action: any) {
-    // const resumeHandler = ACTION_HANDLERS[action.type];
+type ResumesState = {
+	resumes: any[];
+};
 
-    // if (resumeHandler) {
-    //     return resumeHandler(state, action);
-    // }
+const initialState: ResumesState = {
+	resumes: []
+};
 
-    return state;
-}
+export const ResumeReducer = createReducer<ResumesState>(initialState, (builder) =>
+	builder.addCase(CreateResumeSuccessAction, (state, action) => {
+		return {
+			...state,
+			resumes: [...state.resumes, action.payload]
+		};
+	})
+);

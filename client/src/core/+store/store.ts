@@ -13,8 +13,6 @@ const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(sagaM
 // Run the saga
 sagaMiddleware.run(rootSaga);
 
-if (true) {
-	(window as any).store = store;
-}
+(window as any).store = store;
 
 export default store;

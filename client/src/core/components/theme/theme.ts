@@ -4,36 +4,36 @@ export const darkTheme = createMuiTheme({
 	palette: {
 		type: 'dark',
 		background: {
-			default: '#303030',
+			default: '#303030'
 		},
 		primary: {
-			main: '#ffea00',
+			main: '#ffea00'
 		},
 		secondary: {
-			main: '#dc004e',
-		},
+			main: '#dc004e'
+		}
 	},
 	typography: {
-		fontFamily: ['Open Sans', 'Sans-serif'].join(','),
-	},
+		fontFamily: ['Open Sans', 'Sans-serif'].join(',')
+	}
 });
 
 export const lightTheme = createMuiTheme({
 	palette: {
 		type: 'light',
 		background: {
-			default: '#fff',
+			default: '#fff'
 		},
 		primary: {
 			main: '#0097a7',
-			contrastText: '#fff',
+			contrastText: '#fff'
 		},
 		secondary: {
 			main: '#f50057',
-			contrastText: '#fff',
-		},
+			contrastText: '#fff'
+		}
 	},
 	typography: {
-		fontFamily: ['Open Sans', 'Sans-serif'].join(','),
-	},
+		fontFamily: ['Open Sans', 'Sans-serif'].join(',')
+	}
 });

@@ -18,7 +18,7 @@ export const LanguageProvider: React.FC<Props> = ({ children }) => {
 			const newLanguage = languageOptions[selected] ? selected : 'en';
 			setUserLanguage(newLanguage);
 			window.localStorage.setItem('rcml-lang', newLanguage);
-		},
+		}
 	};
 
 	return <LanguageContext.Provider value={provider}>{children}</LanguageContext.Provider>;

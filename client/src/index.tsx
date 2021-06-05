@@ -17,7 +17,7 @@ import { Home } from './routes/home/Home';
 // }
 // require('dotenv').config();
 
-console.log(process.env);
+// console.log(process.env);
 
 function Main() {
 	const isLogged = localStorage.token;

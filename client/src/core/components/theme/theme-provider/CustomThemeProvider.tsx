@@ -12,7 +12,7 @@ export const CustomThemeProvider: React.FC<Props> = ({ children }) => {
 	const [theme, setTheme] = useState(lightTheme);
 	const provider = {
 		theme,
-		setTheme,
+		setTheme
 	};
 
 	return (

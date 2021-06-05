@@ -6,5 +6,5 @@ export const LanguageContext = createContext({
 	dictionary: dictionaryList.en,
 	userLanguageChange: (selected: string): void => {
 		selected;
-	},
+	}
 });

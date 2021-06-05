@@ -5,5 +5,5 @@ export const ThemeContext = createContext({
 	theme: lightTheme,
 	setTheme: (selected: any): void => {
 		selected;
-	},
+	}
 });

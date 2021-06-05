@@ -5,5 +5,5 @@ export const dictionaryList: { [word: string]: { [word: string]: string } } = { 
 
 export const languageOptions: { [word: string]: string } = {
 	en: 'English',
-	bg: 'Български',
+	bg: 'Български'
 };
