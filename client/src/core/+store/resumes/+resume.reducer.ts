@@ -26,11 +26,12 @@ export const ResumeReducer = createReducer<ResumesState>(initialState, (builder)
 			};
 		})
 		.addCase(SelectResumeAction, (state, action) => {
+			const { idx, resume } = action.payload;
 			return {
 				...state,
 				selectedResume: {
-					idx: action.payload.idx,
-					resume: action.payload.resume
+					idx,
+					resume
 				}
 			};
 		})
