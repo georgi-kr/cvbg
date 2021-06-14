@@ -1,8 +1,18 @@
-export class SectionModel {
-	title: string;
-	contentList: any;
+import { v4 } from 'uuid';
 
-	constructor(title = '', contentList = {}) {
+type ContentP = {
+	title?: string;
+	body?: string;
+	date?: string;
+};
+
+export class SectionModel {
+	id: string;
+	title: string;
+	contentList: ContentP[];
+
+	constructor(title = '', contentList = []) {
+		this.id = v4();
 		this.title = title;
 		this.contentList = contentList;
 	}

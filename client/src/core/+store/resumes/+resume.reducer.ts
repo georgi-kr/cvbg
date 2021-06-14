@@ -1,5 +1,10 @@
 import { createReducer } from '@reduxjs/toolkit';
-import { CreateResumeAction, SelectResumeAction } from './+actions.types';
+import {
+	AddSectionResumeAction,
+	CreateResumeAction,
+	SaveCurrentResumeAction,
+	SelectResumeAction
+} from './+actions.types';
 
 type ResumesState = {
 	all: any[];
@@ -12,7 +17,7 @@ type ResumesState = {
 const initialState: ResumesState = {
 	all: [],
 	selectedResume: {
-		idx: 0,
+		idx: -1,
 		resume: null
 	}
 };
@@ -32,6 +37,33 @@ export const ResumeReducer = createReducer<ResumesState>(initialState, (builder)
 				selectedResume: {
 					idx,
 					resume
+				}
+			};
+		})
+		.addCase(SaveCurrentResumeAction, (state, action) => {
+			return {
+				...state,
+				all: state.all.map((resume, idx) => {
+					if (idx === state.selectedResume.idx) {
+						return action.payload;
+					}
+					return resume;
+				}),
+				selectedResume: {
+					idx: state.selectedResume.idx,
+					resume: action.payload
+				}
+			};
+		})
+		.addCase(AddSectionResumeAction, (state, action) => {
+			return {
+				...state,
+				selectedResume: {
+					...state.selectedResume,
+					resume: {
+						...state.selectedResume.resume,
+						sections: [...state.selectedResume.resume.sections, action.payload]
+					}
 				}
 			};
 		})

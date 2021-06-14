@@ -1,7 +1,7 @@
 // import { put } from 'redux-saga/effects';
 import { Action } from '../../interfaces/action.type';
 
-export function* selectResumeWorker(action: Action<any>) {
+export function* saveCurrentResumeWorker(action: Action<any>) {
 	return action;
 
 	// try {

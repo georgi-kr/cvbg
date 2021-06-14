@@ -14,6 +14,17 @@ export const LanguageProvider: React.FC<Props> = ({ children }) => {
 	const provider = {
 		userLanguage,
 		dictionary: dictionaryList[userLanguage],
+		translate: (tid: string | string[]) => {
+			if (typeof tid === 'string') {
+				return dictionaryList[userLanguage][tid] || tid;
+			} else if (tid.length > 0) {
+				return tid
+					.map((word) => {
+						return dictionaryList[userLanguage][word] || word;
+					})
+					.join(' ');
+			}
+		},
 		userLanguageChange: (selected: string) => {
 			const newLanguage = languageOptions[selected] ? selected : 'en';
 			setUserLanguage(newLanguage);
