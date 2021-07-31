@@ -55,10 +55,10 @@ export const ContentContainer: FC = () => {
 	}
 
 	React.useEffect(() => {
+		if (selectedResume) {
+			saveCurrentResume(JSON.parse(JSON.stringify(selectedResume)));
+		}
 		setSelectedResume((prevState) => {
-			if (selectedResume) {
-				saveCurrentResume(prevState);
-			}
 			return resumes.all.find((r) => r.id === resumes.selectedResumeId);
 		});
 	}, [resumes.selectedResumeId]);
@@ -79,7 +79,12 @@ export const ContentContainer: FC = () => {
 							{translate(['reorder'])}
 						</Button>
 						{/*<Button>Theme</Button> To implement */}
-						<Button color={'primary'} variant={'contained'} onClick={saveCurrentResume}>
+						{/*<Button>AutoSave</Button> To implement */}
+						<Button
+							color={'primary'}
+							variant={'contained'}
+							onClick={() => saveCurrentResume(selectedResume)}
+						>
 							{translate('save')}
 						</Button>
 					</div>
