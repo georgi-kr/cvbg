@@ -1,7 +1,8 @@
 @import '../../../styles/variables'; 
 
 .content-container {
-    width: 100%;
+    width: 75vw ;
     min-height: 100vh;
+    overflow: hidden;
     border-left: 1px solid $color-border;
 }

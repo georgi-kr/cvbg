@@ -7,5 +7,6 @@
     "add": "add",
     "section": "section",
     "save": "save",
-    "new": "new"
+    "new": "new",
+    "reorder": "reorder"
 }

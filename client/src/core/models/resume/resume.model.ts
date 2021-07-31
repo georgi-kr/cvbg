@@ -1,7 +1,7 @@
 import { v4 } from 'uuid';
 import { SectionModel } from '../section/section.model';
 
-export type layoutItem = {
+export type LayoutItem = {
 	i: string;
 	x: number;
 	y: number;
@@ -13,7 +13,7 @@ export class ResumeModel {
 	public id: string;
 	public name: string;
 	public sections?: SectionModel[];
-	public layoutItems?: layoutItem[];
+	public layoutItems?: LayoutItem[];
 
 	constructor({ name = '', sections = [], id = v4(), layoutItems = [] }) {
 		this.id = id;
