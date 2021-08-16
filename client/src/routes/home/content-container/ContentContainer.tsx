@@ -5,11 +5,12 @@ import { Button } from '@material-ui/core';
 import { Add } from '@material-ui/icons';
 
 import { AppState } from '../../../core/+store/root.reducer';
-import { LanguageContext } from '../../../core/components/langugage/language.context';
 import { SaveResumeAction } from '../../../core/+store/resumes/+actions.types';
+import { LanguageContext } from '../../../core/components/langugage/language.context';
 import { CVCanvas } from './cv-canvas/CVCanvas';
 import { SectionModel } from '../../../core/models/section/section.model';
 import { LayoutItem } from '../../../core/models/resume/resume.model';
+import { SectionType } from '../../../core/types/section.type';
 
 export const ContentContainer: FC = () => {
 	const dispatch = useDispatch();
@@ -25,7 +26,7 @@ export const ContentContainer: FC = () => {
 		dispatch(SaveResumeAction(resume));
 	}
 
-	function addLayoutItem(layoutItems: LayoutItem[], sections: SectionModel[]): LayoutItem {
+	function addLayoutItem(layoutItems: LayoutItem[], sections: SectionType[]): LayoutItem {
 		const y = layoutItems.reduce((acc, item) => {
 			acc = Math.max(acc, item.y + item.h);
 			return acc;
@@ -41,7 +42,7 @@ export const ContentContainer: FC = () => {
 
 	function addSectionToCurrent() {
 		setSelectedResume((prevState) => {
-			const newSections = [...prevState.sections, new SectionModel(translate(['new', 'section']))];
+			const newSections = [...prevState.sections, new SectionModel(translate(['section']))];
 			return {
 				...prevState,
 				sections: newSections,
@@ -58,7 +59,7 @@ export const ContentContainer: FC = () => {
 		if (selectedResume) {
 			saveCurrentResume(JSON.parse(JSON.stringify(selectedResume)));
 		}
-		setSelectedResume((prevState) => {
+		setSelectedResume(() => {
 			return resumes.all.find((r) => r.id === resumes.selectedResumeId);
 		});
 	}, [resumes.selectedResumeId]);

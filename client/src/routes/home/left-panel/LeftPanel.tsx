@@ -17,7 +17,7 @@ export const LeftPanel = () => {
 	const { translate } = useContext(LanguageContext);
 
 	function createResume(idx: number) {
-		dispatch(CreateResumeAction(new ResumeModel({ name: `${translate(['new', 'resume'])} (${idx})` })));
+		dispatch(CreateResumeAction(new ResumeModel({ name: `${translate(['resume'])} (${idx})` })));
 	}
 
 	function selectResume(id: string) {

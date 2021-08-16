@@ -1,5 +1,6 @@
 import { v4 } from 'uuid';
 import { SectionModel } from '../section/section.model';
+import { SectionType } from '../../types/section.type';
 
 export type LayoutItem = {
 	i: string;
@@ -12,7 +13,7 @@ export type LayoutItem = {
 export class ResumeModel {
 	public id: string;
 	public name: string;
-	public sections?: SectionModel[];
+	public sections?: SectionType[];
 	public layoutItems?: LayoutItem[];
 
 	constructor({ name = '', sections = [], id = v4(), layoutItems = [] }) {

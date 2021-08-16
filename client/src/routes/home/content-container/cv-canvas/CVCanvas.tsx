@@ -1,9 +1,9 @@
 import React, { Dispatch, FC, MutableRefObject, SetStateAction, useState } from 'react';
 import './CVCanvas.scss';
-import '../../../../../node_modules/react-grid-layout/css/styles.css';
 import GridLayout from 'react-grid-layout';
+import '../../../../../node_modules/react-grid-layout/css/styles.css';
 import { LayoutItem, ResumeModel } from '../../../../core/models/resume/resume.model';
-import { SectionModel } from '../../../../core/models/section/section.model';
+import { SectionType } from '../../../../core/types/section.type';
 
 interface Props {
 	resume?: ResumeModel;
@@ -36,7 +36,7 @@ export const CVCanvas: FC<Props> = ({ resume, containerRef, setSelectedResume, r
 		});
 	}
 
-	function renderSectionsDOM(sections: SectionModel[]) {
+	function renderSectionsDOM(sections: SectionType[]) {
 		return sections.map((section) => {
 			return (
 				<div key={section.id} className={'section-container'}>

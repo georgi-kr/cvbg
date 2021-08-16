@@ -1,19 +1,37 @@
 import { v4 } from 'uuid';
 
-type ContentP = {
-	title?: string;
-	body?: string;
-	date?: string;
-};
-
-export class SectionModel {
-	id: string;
-	title: string;
-	contentList: ContentP[];
+export class SectionModel<ContentType> {
+	private readonly Id: string;
+	private ContentList: ContentType[];
+	private Title: string;
 
 	constructor(title = '', contentList = []) {
-		this.id = v4();
-		this.title = title;
-		this.contentList = contentList;
+		this.Id = v4();
+		this.Title = title;
+		this.ContentList = contentList;
+	}
+
+	get id(): string {
+		return this.Id;
+	}
+
+	get title(): string {
+		return this.Title;
+	}
+
+	set title(newTitle: string) {
+		this.Title = newTitle;
+	}
+
+	get contentList(): ContentType[] {
+		return [...this.ContentList];
+	}
+
+	set contentList(newContentList: ContentType[]) {
+		this.ContentList = newContentList;
+	}
+
+	addContentParagraph(ContentP) {
+		this.ContentList = [...this.ContentList, ContentP];
 	}
 }
