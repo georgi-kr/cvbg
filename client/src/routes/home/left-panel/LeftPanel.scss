@@ -1,0 +1,21 @@
+.left-panel-container {
+	width: 25%;
+	height: 100vh;
+
+	.create-btn {
+		width: 90%;
+		margin: 5%;
+	}
+
+	.settings-wrapper {
+		margin: 5%;
+
+		.MuiOutlinedInput-input {
+			padding: 7px 30px 7px 7px;
+		}
+	
+		.MuiButton-root {
+			min-width: 0;
+		}
+	}
+}
